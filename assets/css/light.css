@@ -1,0 +1,1795 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Fredoka:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    scroll-behavior: smooth;
+}
+
+::-moz-selection {
+    color: #ffffff !important;
+    background: #7716D8 !important;
+}
+
+::selection {
+    color: #ffffff !important;
+    background: #7716D8 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7716D8;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #ECECEC;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+.light_theme {
+    background-color: #ECECEC;
+}
+
+.light_theme #progress {
+    z-index: 10;
+    position: fixed;
+    bottom: 2rem;
+    right: 1.7rem;
+    height: 6rem;
+    width: 6rem;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.light_theme #progress-value {
+    display: block;
+    height: calc(100% - 0.9rem);
+    width: calc(100% - 0.9rem);
+    background-color: #ECECEC;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 2.6rem;
+    color: #7716D8;
+    margin: 0 .1px 0 0;
+}
+
+.light_theme #toggle {
+    display: none;
+}
+
+.light_theme .toggle-btn {
+    margin: 3rem 0 0 0;
+    display: inline-block;
+    width: 4.8rem;
+    height: 2.5rem;
+    background-color: #ECECEC;
+    border-radius: 10rem;
+}
+
+.light_theme .toggle-btn .toggle-ball {
+    background-color: #7716D8;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 10rem;
+    margin: 0.1rem 0.2rem;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.light_theme .toggle-btn .toggle-ball:hover {
+    cursor: pointer;
+}
+
+.light_theme #toggle:checked+.toggle-label .toggle-ball {
+    transform: translateX(2.1rem);
+    background-color: #7716D8;
+}
+
+.light_theme .head {
+    margin: 8rem 0 2rem 0;
+}
+
+.light_theme .head h1 {
+    color: #7716D8;
+    font-family: Fredoka;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin: 0 0 3rem 0;
+}
+
+.light_theme .head h2 {
+    letter-spacing: 0.1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.light_theme .bg-common {
+    background-color: #ffffff;
+    border-radius: 2rem;
+    text-align: left;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.light_theme header {
+    background: linear-gradient(135deg, rgba(223, 203, 243, 0.66) 0.07%, rgba(210, 181, 240, 0.85) 50.35%, #7716D8 99.31%);
+    background-repeat: no-repeat;
+}
+
+.light_theme header .stick {
+    background: #ffffff;
+    position: fixed;
+    min-width: 100%;
+    top: 0;
+    transition: 1s;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.light_theme .stick .logo {
+    margin-top: 0.5rem;
+}
+
+.light_theme .stick .nav-list {
+    margin: 2rem 2rem 2rem 20rem;
+}
+
+.light_theme .stick .toggle-btn {
+    margin-top: 2rem;
+}
+
+.light_theme .stick .menu {
+    margin-top: 0.7rem;
+}
+
+.light_theme nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.light_theme nav .hide {
+    display: none;
+}
+
+.light_theme nav .menu {
+    display: none;
+    margin: 2rem 0 0 2rem;
+    font-size: 2.6rem;
+    border-radius: 50%;
+    padding: 1rem 1rem 1.2rem 1rem;
+}
+
+.light_theme nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+.light_theme nav .logo {
+    color: #7716D8;
+    font-family: "Creepster", cursive;
+    letter-spacing: 0.2rem;
+    margin-top: 2rem;
+    font-size: 4rem;
+}
+
+.light_theme nav .nav-list {
+    margin: 3rem 0rem 0 20rem;
+}
+
+.light_theme nav .nav-list li {
+    display: inline;
+}
+
+.light_theme nav .nav-list li a {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin: 0 2rem;
+}
+
+.light_theme nav .nav-list li a:hover {
+    color: #7716D8;
+    transition: 0.3ss ease-in-out;
+}
+
+.light_theme .hero .hero-body {
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    grid-template-areas: 'content content image image';
+    padding: 7rem 0 10rem 0;
+
+}
+
+.light_theme .hero .content {
+    grid-area: content;
+    margin: auto 0;
+}
+
+.light_theme .content h1 {
+    letter-spacing: 0.2rem;
+    font-family: "Fredoka", sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.light_theme .content h1 .typed {
+    letter-spacing: 0.2rem;
+    font-family: "Fredoka", sans-serif;
+    font-size: 4.8rem;
+    font-weight: bold;
+    color: #7716D8;
+}
+
+.light_theme .content .btn1 {
+    margin: 3rem 0;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #7716D8;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #7716D8;
+    font-weight: 500;
+}
+
+.light_theme .content .btn1:hover {
+    cursor: pointer;
+    color: #7716D8;
+    transition: 0.3ss ease-in-out;
+    background-color: transparent;
+}
+
+.light_theme .hero .image {
+    grid-area: image;
+}
+
+.light_theme .contain {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.light_theme .facts {
+    margin: 10rem 0 0 0;
+}
+
+.light_theme .facts .fact {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.light_theme .fact_item {
+    margin: 6rem 0 0 0;
+    background-color: #ffffff;
+    border-radius: 2rem;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.light_theme .fact_item:hover {
+    cursor: pointer;
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+    background-color: #7716D8;
+}
+
+.light_theme .fact_item:hover h1 {
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.light_theme .fact_item:hover .ico {
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.light_theme .fact_item:hover .ico i {
+    cursor: pointer;
+    color: #7716D8;
+}
+
+.light_theme .fact_item h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #7716D8;
+    margin: 0 auto;
+}
+
+.light_theme .fact_item .fact-heading {
+    padding: 5rem 0 0 0;
+}
+
+.light_theme .fact_item h2{
+    padding: 0 0 2.8rem 0;
+    font-size: 1.8rem;
+}
+
+.light_theme .fact_item .ico {
+    position: absolute;
+    inset: -50px 0 0 0;
+    background-color: #7716D8;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+    width: 7rem;
+    height: 7rem;
+    margin-top: 2rem;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.light_theme .fact_item i {
+    font-size: 4rem;
+    color: #ffffff;
+    margin: 1.5rem 0;
+}
+
+.light_theme .about .about-me {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 5fr 8fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.light_theme .about-img img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.light_theme .about-me .about-dec {
+    padding: 4rem 3rem 0 3rem;
+}
+
+.light_theme .about-dec h1 {
+    font-family: Fredoka;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.09rem;
+}
+
+.light_theme .about-dec h1 span {
+    letter-spacing: 0.2rem;
+    font-family: "Fredoka", sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #7716D8;
+}
+
+.light_theme .about-dec p {
+    padding: 3rem 0 0 0;
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.light_theme .about-dec .btn1 {
+    margin: 3rem 0;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #7716D8;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #7716D8;
+    font-weight: 500;
+}
+
+.light_theme .about-dec .btn1:hover {
+    cursor: pointer;
+    color: #7716D8;
+    transition: 0.3ss ease-in-out;
+    background-color: transparent;
+}
+
+.light_theme .about-dec .btn2 {
+    margin: 0 0 0 1em;
+    box-sizing: border-box;
+    color: #7716D8;
+    background-color: transparent;
+}
+
+.light_theme .about-dec .btn2:hover {
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+    background-color: #7716D8;
+}
+
+.light_theme .skills-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.light_theme .skills-set {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.light_theme .skill {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 10rem;
+    position: relative;
+    margin: 0 .6rem 1.2rem;
+    overflow: hidden;
+    border-radius: 1.1rem;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+
+}
+
+.light_theme .skill:hover {
+    transform: translateY(-.5rem);
+    transition: all 0.4s;
+}
+
+.light_theme .skill img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.light_theme .skill .npm {
+    width: 8rem;
+    height: auto !important;
+}
+
+.light_theme .portfolios {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.light_theme .port-items {
+    overflow: hidden;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.light_theme .port-items img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 99%;
+    border-radius: 2rem;
+}
+
+.light_theme .port-items img:hover {
+    transition: 0.5s all;
+    transform: scale(1.2);
+}
+
+.light_theme .contacts {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: 5fr 7fr;
+    margin: 0 0 3rem 0;
+}
+
+.light_theme .success-message {
+    display: none;
+    width: 70%;
+    margin: 2rem auto;
+    background-color: rgb(24, 212, 24);
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+
+.light_theme .success-message p {
+    padding: 2.3rem 2rem;
+    text-align: center;
+}
+
+.light_theme .error-message {
+    display: none;
+    width: 60%;
+    margin: 2rem auto;
+    background-color: #FF1F1F;
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+
+.light_theme .error-message p {
+    padding: 2.3rem 2rem;
+    text-align: center;
+}
+
+.light_theme .con-form form {
+    margin: 3rem 3rem 0 3rem;
+}
+
+.light_theme .con-form form .btn1 {
+    margin: 3rem 0;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #7716D8;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #7716D8;
+    font-weight: 500;
+}
+
+.light_theme .con-form form .btn1:hover {
+    cursor: pointer;
+    color: #7716D8;
+    transition: 0.3s ease-in-out;
+    background-color: transparent;
+}
+
+.light_theme .con-form form input,
+.light_theme .con-form form .message {
+    border-bottom: 3px solid #7716D8;
+    padding: 1rem 1rem;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    background-color: transparent;
+    resize: vertical;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 2rem 0;
+}
+
+.light_theme .con-form form input::-moz-placeholder,
+.light_theme .con-form form .message::-moz-placeholder {
+    color: #000;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.light_theme .con-form form input::placeholder,
+.light_theme .con-form form .message::placeholder {
+    color: #000;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.light_theme .con-form form input:focus,
+.light_theme .con-form form .message:focus {
+    outline: none;
+}
+
+.light_theme .con-form form .name,
+.light_theme .con-form form .email {
+    width: 49%;
+}
+
+.light_theme .con-form form .subject {
+    width: 98%;
+}
+
+.light_theme .con-form form .message {
+    width: 98%;
+}
+
+.light_theme .con-info {
+    padding: 4rem 3rem 0 3rem;
+}
+
+.light_theme .ico {
+    font-size: 2rem;
+    color: #ffffff;
+    border: 0.2rem solid #7716D8;
+    background-color: #7716D8;
+    border-radius: 50%;
+    padding: 2rem;
+}
+
+.light_theme .ico:hover {
+    color: #7716D8;
+    background-color: #ffffff;
+}
+
+.light_theme .info {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    justify-content: left;
+    text-align: left;
+    grid-template-columns: 1fr 5fr;
+    margin: 0 0 3rem 0;
+    padding: 0.7rem 0;
+}
+
+.light_theme .con-dec h2 {
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
+}
+
+.light_theme .con-dec a {
+    color: #000;
+    text-decoration: none;
+}
+
+.light_theme .con-dec a:hover {
+    color: #7716D8;
+    transition: 0.3s ease-in-out;
+}
+
+.light_theme .con-dec h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.light_theme .social {
+    margin: 0 0 2rem 0;
+}
+
+.light_theme .social ul {
+    display: flex;
+    justify-content: center;
+}
+
+.light_theme .social ul li {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.light_theme .social ul li img {
+    width: 5.5rem;
+    padding: 1rem;
+    background-color: #ECECEC;
+    border-radius: 50%;
+}
+
+.light_theme .social ul li img:hover {
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+    background-color: #7716D8;
+}
+
+.light_theme .footer {
+    background-color: #ffffff;
+}
+
+.light_theme .footer a {
+    text-decoration: none;
+}
+
+.light_theme .footer a h1 {
+    color: #7716D8;
+    font-family: "Creepster", cursive;
+    letter-spacing: 0.2rem;
+    padding: 1rem 0;
+    font-size: 4rem;
+}
+
+.light_theme .footer a h1 span {
+    color: #000;
+    font-family: Outfit;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.2rem;
+    float: right;
+    padding: 1rem 0 0 0;
+}
+
+@media only screen and (max-width: 1199px) {
+
+    .light_theme nav .menu {
+        display: block;
+    }
+
+    .light_theme nav .menus {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .light_theme nav .menus .menu-click {
+        position: relative;
+        display: inline;
+    }
+
+    .light_theme nav .menus .hide {
+        display: none;
+    }
+
+    .light_theme nav .nav-list {
+        position: fixed;
+        width: 100%;
+        height: 102vh;
+        background: linear-gradient(135deg, rgba(223, 203, 243, 0.66) 0.07%, rgba(210, 181, 240, 0.85) 50.35%, #7716D8 99.31%);
+        text-align: center;
+        opacity: 0.9;
+        transition: 1s;
+        right: -2rem;
+        top: -260vh;
+    }
+
+    .light_theme nav .nav-list li {
+        display: block;
+        margin: 10rem 0;
+    }
+
+    .light_theme nav .nav-list li a {
+        font-size: 4rem;
+    }
+
+    .light_theme nav .menu-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .light_theme nav .nav-list-show {
+        top: -3rem;
+        right: -2rem;
+    }
+
+    .light_theme .hero .hero-body {
+        grid-template-areas: 'image' 'content';
+        justify-content: center;
+
+    }
+
+    .light_theme .contain {
+        width: 80%;
+    }
+
+    .light_theme .facts .fact {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
+    .light_theme .facts .fact_item {
+        margin: 0.5rem 0;
+    }
+
+    .light_theme .about .about-me {
+        grid-template-columns: 1fr;
+    }
+
+    .light_theme .portfolios {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .light_theme .contacts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    html {
+        font-size: 50%;
+    }
+
+    .light_theme nav .logo {
+        margin: 2rem 0 0 0;
+    }
+
+    .light_theme nav .menu {
+        margin-top: 2rem;
+    }
+
+    .light_theme .content h1 {
+        letter-spacing: 0.2rem;
+        font-family: "Fredoka", sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .light_theme .image img {
+        max-width: 100%;
+    }
+
+    .light_theme .content h1 .typed {
+        letter-spacing: 0.2rem;
+        font-family: "Fredoka", sans-serif;
+        font-size: 4rem;
+        font-weight: bold;
+        color: #7716D8;
+    }
+
+    .light_theme .contain {
+        min-width: 95%;
+    }
+
+    .light_theme .fact {
+        margin: 1rem 0;
+    }
+
+    .light_theme .about-dec .about-head {
+        line-clamp: 3;
+    }
+
+    .light_theme .about-dec .btn1 {
+        padding: 1rem 2rem;
+    }
+
+    .light_theme .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .light_theme .portfolios {
+        grid-template-columns: 1fr;
+    }
+
+    .light_theme .port-items img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 99%;
+        border-radius: 2rem;
+    }
+
+    .light_theme .success-message,
+    .light_theme .error-message {
+        width: 95%;
+    }
+
+    .light_theme .con-form form input,
+    .light_theme .con-form form .message {
+        width: 100%;
+    }
+
+    .light_theme .con-form form .name,
+    .light_theme .con-form form .email {
+        width: 100%;
+    }
+}
+
+
+# sourceMappingURL=light.css.map */
+
+
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Fredoka:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    scroll-behavior: smooth;
+}
+
+::-moz-selection {
+    color: #ffffff !important;
+    background: #7716D8 !important;
+}
+
+::selection {
+    color: #ffffff !important;
+    background: #7716D8 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7716D8;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #ECECEC;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+.light_theme {
+    background-color: #ECECEC;
+}
+
+.light_theme #progress {
+    z-index: 10;
+    position: fixed;
+    bottom: 2rem;
+    right: 1.7rem;
+    height: 6rem;
+    width: 6rem;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.light_theme #progress-value {
+    display: block;
+    height: calc(100% - 0.9rem);
+    width: calc(100% - 0.9rem);
+    background-color: #ECECEC;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 2.6rem;
+    color: #7716D8;
+    margin: 0 .1px 0 0;
+}
+
+.light_theme #toggle {
+    display: none;
+}
+
+.light_theme .toggle-btn {
+    margin: 3rem 0 0 0;
+    display: inline-block;
+    width: 4.8rem;
+    height: 2.5rem;
+    background-color: #ECECEC;
+    border-radius: 10rem;
+}
+
+.light_theme .toggle-btn .toggle-ball {
+    background-color: #7716D8;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 10rem;
+    margin: 0.1rem 0.2rem;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.light_theme .toggle-btn .toggle-ball:hover {
+    cursor: pointer;
+}
+
+.light_theme #toggle:checked+.toggle-label .toggle-ball {
+    transform: translateX(2.1rem);
+    background-color: #7716D8;
+}
+
+.light_theme .head {
+    margin: 8rem 0 2rem 0;
+}
+
+.light_theme .head h1 {
+    color: #7716D8;
+    font-family: Fredoka;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin: 0 0 3rem 0;
+}
+
+.light_theme .head h2 {
+    letter-spacing: 0.1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.light_theme .bg-common {
+    background-color: #ffffff;
+    border-radius: 2rem;
+    text-align: left;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.light_theme header {
+    background: linear-gradient(135deg, rgba(223, 203, 243, 0.66) 0.07%, rgba(210, 181, 240, 0.85) 50.35%, #7716D8 99.31%);
+    background-repeat: no-repeat;
+}
+
+.light_theme header .stick {
+    background: #ffffff;
+    position: fixed;
+    min-width: 100%;
+    top: 0;
+    transition: 1s;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.light_theme header .stick .logo {
+    margin-top: 0.5rem;
+}
+
+.light_theme header .stick .nav-list {
+    margin: 2rem 2rem 2rem 20rem;
+}
+
+.light_theme header .stick .toggle-btn {
+    margin-top: 2rem;
+}
+
+.light_theme header .stick .menu {
+    margin-top: 0.7rem;
+}
+
+.light_theme header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.light_theme header nav .hide {
+    display: none;
+}
+
+.light_theme header nav .menu {
+    display: none;
+    margin: 2rem 0 0 2rem;
+    font-size: 2.6rem;
+    border-radius: 50%;
+    padding: 1rem 1rem 1.2rem 1rem;
+}
+
+.light_theme header nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+.light_theme header nav .logo {
+    color: #7716D8;
+    font-family: "Creepster", cursive;
+    letter-spacing: 0.2rem;
+    margin-top: 2rem;
+    font-size: 4rem;
+}
+
+.light_theme header nav .nav-list {
+    margin: 3rem 0rem 0 20rem;
+}
+
+.light_theme header nav .nav-list li {
+    display: inline;
+}
+
+.light_theme header nav .nav-list li a {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin: 0 2rem;
+}
+
+.light_theme header nav .nav-list li a:hover {
+    color: #7716D8;
+    transition: 0.3ss ease-in-out;
+}
+
+.light_theme header .hero .hero-body {
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    grid-template-areas: 'content content image image';
+    padding: 7rem 0 10rem 0;
+
+}
+
+.light_theme header .hero .content {
+    grid-area: content;
+    margin: auto 0;
+}
+
+.light_theme header .hero .content h1 {
+    letter-spacing: 0.2rem;
+    font-family: "Fredoka", sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.light_theme header .hero .content h1 .typed {
+    letter-spacing: 0.2rem;
+    font-family: "Fredoka", sans-serif;
+    font-size: 4.8rem;
+    font-weight: bold;
+    color: #7716D8;
+}
+
+.light_theme header .hero .content .btn1 {
+    margin: 3rem 0;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #7716D8;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #7716D8;
+    font-weight: 500;
+}
+
+.light_theme header .hero .content .btn1:hover {
+    cursor: pointer;
+    color: #7716D8;
+    transition: 0.3ss ease-in-out;
+    background-color: transparent;
+}
+
+.light_theme header .hero .image {
+    grid-area: image;
+}
+
+.light_theme .contain {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+/*new css*/
+.light_theme .contain .facts,
+.light_theme .contain .services {
+    margin: 10rem 0 0 0;
+}
+
+.light_theme .contain .facts .fact,
+.light_theme .contain .facts .service,
+.light_theme .contain .services .fact,
+.light_theme .contain .services .service {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.light_theme .contain .facts .fact_item,
+.light_theme .contain .facts .ser_item,
+.light_theme .contain .services .fact_item,
+.light_theme .contain .services .ser_item {
+    margin: 6rem 0 0 0;
+    background-color: #ffffff;
+    border-radius: 2rem;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.light_theme .contain .facts .fact_item:hover,
+.light_theme .contain .facts .ser_item:hover,
+.light_theme .contain .services .fact_item:hover,
+.light_theme .contain .services .ser_item:hover {
+    cursor: pointer;
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+    background-color: #7716D8;
+}
+
+.light_theme .contain .facts .fact_item:hover h1,
+.light_theme .contain .facts .ser_item:hover h1,
+.light_theme .contain .services .fact_item:hover h1,
+.light_theme .contain .services .ser_item:hover h1 {
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.light_theme .contain .facts .fact_item:hover .ico,
+.light_theme .contain .facts .ser_item:hover .ico,
+.light_theme .contain .services .fact_item:hover .ico,
+.light_theme .contain .services .ser_item:hover .ico {
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.light_theme .contain .facts .fact_item:hover .ico i,
+.light_theme .contain .facts .ser_item:hover .ico i,
+.light_theme .contain .services .fact_item:hover .ico i,
+.light_theme .contain .services .ser_item:hover .ico i {
+    cursor: pointer;
+    color: #7716D8;
+}
+
+.light_theme .contain .facts .fact_item h1,
+.light_theme .contain .facts .ser_item h1,
+.light_theme .contain .services .fact_item h1,
+.light_theme .contain .services .ser_item h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #7716D8;
+    margin: 0 auto;
+}
+
+.light_theme .contain .facts .fact_item .fact-heading,
+.light_theme .contain .facts .ser_item .fact-heading,
+.light_theme .contain .services .fact_item .fact-heading,
+.light_theme .contain .services .ser_item .fact-heading {
+    padding: 5rem 0 0 0;
+}
+
+.light_theme .contain .facts .fact_item .ser_dec,
+.light_theme .contain .facts .ser_item .ser_dec,
+.light_theme .contain .services .fact_item .ser_dec,
+.light_theme .contain .services .ser_item .ser_dec {
+    padding: 1rem 0 2rem 0;
+}
+
+.light_theme .contain .facts .fact_item h2,
+.light_theme .contain .facts .ser_item h2,
+.light_theme .contain .services .fact_item h2,
+.light_theme .contain .services .ser_item h2 {
+    padding: 0 0 2.8rem 0;
+    font-size: 1.8rem;
+}
+
+.light_theme .contain .facts .fact_item .ico,
+.light_theme .contain .facts .ser_item .ico,
+.light_theme .contain .services .fact_item .ico,
+.light_theme .contain .services .ser_item .ico {
+    position: absolute;
+    inset: -50px 0 0 0;
+    background-color: #7716D8;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+    width: 7rem;
+    height: 7rem;
+    margin-top: 2rem;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.light_theme .contain .facts .fact_item i,
+.light_theme .contain .facts .ser_item i,
+.light_theme .contain .services .fact_item i,
+.light_theme .contain .services .ser_item i {
+    font-size: 4rem;
+    color: #ffffff;
+    margin: 1.5rem 0;
+}
+
+/*end css */
+.light_theme .contain .about .about-me {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 5fr 8fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.light_theme .contain .about .about-me .about-img img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.light_theme .contain .about .about-me .about-dec {
+    padding: 4rem 3rem 0 3rem;
+}
+
+.light_theme .contain .about .about-me .about-dec h1 {
+    font-family: Fredoka;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.09rem;
+}
+
+.light_theme .contain .about .about-me .about-dec h1 span {
+    letter-spacing: 0.2rem;
+    font-family: "Fredoka", sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #7716D8;
+}
+
+.light_theme .contain .about .about-me .about-dec p {
+    padding: 3rem 0 0 0;
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.light_theme .contain .about .about-me .about-dec .btn1 {
+    margin: 3rem 0;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #7716D8;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #7716D8;
+    font-weight: 500;
+}
+
+.light_theme .contain .about .about-me .about-dec .btn1:hover {
+    cursor: pointer;
+    color: #7716D8;
+    transition: 0.3ss ease-in-out;
+    background-color: transparent;
+}
+
+.light_theme .contain .about .about-me .about-dec .btn2 {
+    margin: 0 0 0 1em;
+    box-sizing: border-box;
+    color: #7716D8;
+    background-color: transparent;
+}
+
+.light_theme .contain .about .about-me .about-dec .btn2:hover {
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+    background-color: #7716D8;
+}
+
+.light_theme .contain .skills .skills-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.light_theme .contain .skills .skills-container .skills-set {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.light_theme .contain .skills .skills-container .skills-set .skill {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 10rem;
+    position: relative;
+    margin: 0 .6rem 1.2rem;
+    overflow: hidden;
+    border-radius: 1.1rem;
+    box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
+
+}
+
+.light_theme .contain .skills .skills-container .skills-set .skill:hover {
+    transform: translateY(-.5rem);
+    transition: all 0.4s;
+}
+
+.light_theme .contain .skills .skills-container .skills-set .skill img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.light_theme .contain .skills .skills-container .skills-set .skill .npm {
+    width: 8rem;
+    height: auto !important;
+}
+
+.light_theme .contain .portfolio .portfolios {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.light_theme .contain .portfolio .portfolios .port-items {
+    overflow: hidden;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.light_theme .contain .portfolio .portfolios .port-items img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 99%;
+    border-radius: 2rem;
+}
+
+.light_theme .contain .portfolio .portfolios .port-items img:hover {
+    transition: 0.5s all;
+    transform: scale(1.2);
+}
+
+.light_theme .contain .contact .contacts {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: 5fr 7fr;
+    margin: 0 0 3rem 0;
+}
+
+.light_theme .contain .contact .contacts .con-form .success-message {
+    display: none;
+    width: 70%;
+    margin: 2rem auto;
+    background-color: rgb(24, 212, 24);
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+
+.light_theme .contain .contact .contacts .con-form .success-message p {
+    padding: 2.3rem 2rem;
+    text-align: center;
+}
+
+.light_theme .contain .contact .contacts .con-form .error-message {
+    display: none;
+    width: 60%;
+    margin: 2rem auto;
+    background-color: #FF1F1F;
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+
+.light_theme .contain .contact .contacts .con-form .error-message p {
+    padding: 2.3rem 2rem;
+    text-align: center;
+}
+
+.light_theme .contain .contact .contacts .con-form form {
+    margin: 3rem 3rem 0 3rem;
+}
+
+.light_theme .contain .contact .contacts .con-form form .btn1 {
+    margin: 3rem 0;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #7716D8;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #7716D8;
+    font-weight: 500;
+}
+
+.light_theme .contain .contact .contacts .con-form form .btn1:hover {
+    cursor: pointer;
+    color: #7716D8;
+    transition: 0.3s ease-in-out;
+    background-color: transparent;
+}
+
+.light_theme .contain .contact .contacts .con-form form input,
+.light_theme .contain .contact .contacts .con-form form .message {
+    border-bottom: 3px solid #7716D8;
+    padding: 1rem 1rem;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    background-color: transparent;
+    resize: vertical;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 2rem 0;
+}
+
+.light_theme .contain .contact .contacts .con-form form input::-moz-placeholder,
+.light_theme .contain .contact .contacts .con-form form .message::-moz-placeholder {
+    color: #000;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.light_theme .contain .contact .contacts .con-form form input::placeholder,
+.light_theme .contain .contact .contacts .con-form form .message::placeholder {
+    color: #000;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.light_theme .contain .contact .contacts .con-form form input:focus,
+.light_theme .contain .contact .contacts .con-form form .message:focus {
+    outline: none;
+}
+
+.light_theme .contain .contact .contacts .con-form form .name,
+.light_theme .contain .contact .contacts .con-form form .email {
+    width: 49%;
+}
+
+.light_theme .contain .contact .contacts .con-form form .subject {
+    width: 98%;
+}
+
+.light_theme .contain .contact .contacts .con-form form .message {
+    width: 98%;
+}
+
+.light_theme .contain .contact .contacts .con-info {
+    padding: 4rem 3rem 0 3rem;
+}
+
+.light_theme .contain .contact .contacts .con-info .ico {
+    font-size: 2rem;
+    color: #ffffff;
+    border: 0.2rem solid #7716D8;
+    background-color: #7716D8;
+    border-radius: 50%;
+    padding: 2rem;
+}
+
+.light_theme .contain .contact .contacts .con-info .ico:hover {
+    color: #7716D8;
+    background-color: #ffffff;
+}
+
+.light_theme .contain .contact .contacts .con-info .con-infos .info {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    justify-content: left;
+    text-align: left;
+    grid-template-columns: 1fr 5fr;
+    margin: 0 0 3rem 0;
+    padding: 0.7rem 0;
+}
+
+.light_theme .contain .contact .contacts .con-info .con-infos .info .con-dec h2 {
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
+}
+
+.light_theme .contain .contact .contacts .con-info .con-infos .info .con-dec a {
+    color: #000;
+    text-decoration: none;
+}
+
+.light_theme .contain .contact .contacts .con-info .con-infos .info .con-dec a:hover {
+    color: #7716D8;
+    transition: 0.3s ease-in-out;
+}
+
+.light_theme .contain .contact .contacts .con-info .con-infos .info .con-dec h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.light_theme .contain .contact .contacts .con-info .social {
+    margin: 0 0 2rem 0;
+}
+
+.light_theme .contain .contact .contacts .con-info .social ul {
+    display: flex;
+    justify-content: center;
+}
+
+.light_theme .contain .contact .contacts .con-info .social ul li {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.light_theme .contain .contact .contacts .con-info .social ul li img {
+    width: 5.5rem;
+    padding: 1rem;
+    background-color: #ECECEC;
+    border-radius: 50%;
+}
+
+.light_theme .contain .contact .contacts .con-info .social ul li img:hover {
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+    background-color: #7716D8;
+}
+
+.light_theme .footer {
+    background-color: #ffffff;
+}
+
+.light_theme .footer a {
+    text-decoration: none;
+}
+
+.light_theme .footer a h1 {
+    color: #7716D8;
+    font-family: "Creepster", cursive;
+    letter-spacing: 0.2rem;
+    padding: 1rem 0;
+    font-size: 4rem;
+}
+
+.light_theme .footer a h1 span {
+    color: #000;
+    font-family: Outfit;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.2rem;
+    float: right;
+    padding: 1rem 0 0 0;
+}
+
+@media only screen and (max-width: 1199px) {
+
+    .light_theme header nav .menu {
+        display: block;
+    }
+
+    .light_theme header nav .menus {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .light_theme header nav .menus .menu-click {
+        position: relative;
+        display: inline;
+    }
+
+    .light_theme header nav .menus .hide {
+        display: none;
+    }
+
+    .light_theme header nav .nav-list {
+        position: fixed;
+        width: 100%;
+        height: 102vh;
+        background: linear-gradient(135deg, rgba(223, 203, 243, 0.66) 0.07%, rgba(210, 181, 240, 0.85) 50.35%, #7716D8 99.31%);
+        text-align: center;
+        opacity: 0.9;
+        transition: 1s;
+        right: -2rem;
+        top: -260vh;
+    }
+
+    .light_theme header nav .nav-list li {
+        display: block;
+        margin: 10rem 0;
+    }
+
+    .light_theme header nav .nav-list li a {
+        font-size: 4rem;
+    }
+
+    .light_theme header nav .menu-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .light_theme header nav .nav-list-show {
+        top: -3rem;
+        right: -2rem;
+    }
+
+    .light_theme header .hero .hero-body {
+        grid-template-areas: 'image' 'content';
+        justify-content: center;
+
+    }
+
+    .light_theme .contain {
+        width: 80%;
+    }
+
+    .light_theme .contain .facts .fact,
+    .light_theme .contain .facts .service,
+    .light_theme .contain .services .fact,
+    .light_theme .contain .services .service {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
+    .light_theme .contain .facts .fact .fact_item,
+    .light_theme .contain .facts .fact .ser_dec,
+    .light_theme .contain .facts .service .fact_item,
+    .light_theme .contain .facts .service .ser_dec,
+    .light_theme .contain .services .fact .fact_item,
+    .light_theme .contain .services .fact .ser_dec,
+    .light_theme .contain .services .service .fact_item,
+    .light_theme .contain .services .service .ser_dec {
+        margin: 0.5rem 0;
+    }
+
+    .light_theme .contain .about .about-me {
+        grid-template-columns: 1fr;
+    }
+
+    .light_theme .contain .portfolio .portfolios {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .light_theme .contain .contact .contacts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    html {
+        font-size: 50%;
+    }
+
+    .light_theme header nav .logo {
+        margin: 2rem 0 0 0;
+    }
+
+    .light_theme header nav .menu {
+        margin-top: 2rem;
+    }
+
+    .light_theme header .hero .content h1 {
+        letter-spacing: 0.2rem;
+        font-family: "Fredoka", sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .light_theme header .hero .image img {
+        max-width: 100%;
+    }
+
+    .light_theme header .hero .content h1 .typed {
+        letter-spacing: 0.2rem;
+        font-family: "Fredoka", sans-serif;
+        font-size: 4rem;
+        font-weight: bold;
+        color: #7716D8;
+    }
+
+    .light_theme .contain {
+        min-width: 95%;
+    }
+
+    .light_theme .contain .fact {
+        margin: 1rem 0;
+    }
+
+    .light_theme .contain .about .about-me .about-dec .about-head {
+        line-clamp: 3;
+    }
+
+    .light_theme .contain .about .about-me .about-dec div .btn1 {
+        padding: 1rem 2rem;
+    }
+
+    .light_theme .contain .skills .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .light_theme .contain .portfolio .portfolios {
+        grid-template-columns: 1fr;
+    }
+
+    .light_theme .contain .portfolio .port-items img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 99%;
+        border-radius: 2rem;
+    }
+
+    .light_theme .contain .contact .success-message,
+    .light_theme .contain .contact .error-message {
+        width: 95%;
+    }
+
+    .light_theme .contain .contact .contacts .con-form form input,
+    .light_theme .contain .contact .contacts .con-form form .message {
+        width: 100%;
+    }
+
+    .light_theme .contain .contact .contacts .con-form form .name,
+    .light_theme .contain .contact .contacts .con-form form .email {
+        width: 100%;
+    }
+}
+
+
+/*# sourceMappingURL=light.css.map */
